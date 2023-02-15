@@ -1,0 +1,97 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "ai assistant",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AskChatgptIntent",
+          "slots": [
+            {
+              "name": "searchQuery",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{searchQuery}"
+              ]
+            }
+          ],
+          "samples": [
+            "are {searchQuery}",
+            "ask openAI a question",
+            "is {searchQuery}",
+            "should {searchQuery}",
+            "does {searchQuery}",
+            "why {searchQuery}",
+            "can {searchQuery}",
+            "who {searchQuery}",
+            "when {searchQuery}",
+            "how {searchQuery}",
+            "what {searchQuery}",
+            "if {searchQuery}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "AskChatgptIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "searchQuery",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1182813000863.1547726320062"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1182813000863.1547726320062",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Ssup, whats the question?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What do you want to ask chatgpt that alexa cant answer?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Yo, what\u0027s cooking, how can I help you today?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "3"
+}
