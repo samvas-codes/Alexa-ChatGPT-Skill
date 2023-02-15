@@ -18,7 +18,7 @@ from ask_sdk_model import Response
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-openai.api_key = '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'
+openai.api_key = <API_KEY>
 
 class LaunchRequestHandler(AbstractRequestHandler):
     """Handler for Skill Launch."""
